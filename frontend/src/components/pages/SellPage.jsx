@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useRecoilValue } from 'recoil';
 import userAtom from '../atoms/userAtom.js';
-import { useToast } from '@chakra-ui/react';
+import { Input, useToast } from '@chakra-ui/react';
+import { BsFillImageFill } from 'react-icons/bs'
+import { useRef } from 'react'
+import usePreviewImg from '../../hooks/usePreviewImg.js';
+import { Flex } from '@chakra-ui/react'
+import { CloseButton } from '@chakra-ui/react'
+import { Image } from '@chakra-ui/react'
 const SellPage = () => {
    const toast=useToast()
 
@@ -11,18 +17,23 @@ const SellPage = () => {
   const [description, setDescription] = useState('');
   const [image, setImage] = useState('');
   const [name, setName] = useState('');
-
-
+  const [location, setLocation] = useState('');
+  const imageRef=useRef(null)
+  const { handleImageChange, imgUrl,setImgUrl } = usePreviewImg()
   const user = useRecoilValue(userAtom);
   const owner=user.username
 
   console.log("++++",user)
   console.log("++++dataname",user.username)
+  // Sync image state with imgUrl
+  useEffect(() => {
+    setImage(imgUrl);
+  }, [imgUrl]);
 
-  const postInfo={price,description,name,image,owner}
-  const handleImageUpload = (event) => {
-    setImage(event.target.files[0]);
-  };
+  const postInfo={price,description,name,image,owner,location}
+  console.log(postInfo)
+
+ 
 
   const handleSubmit = async(event) => {
     event.preventDefault()
@@ -38,6 +49,8 @@ const SellPage = () => {
     
         })
         const data = await res.json()
+       
+
         console.log("data recievd:",data)
         if(data){
           toast({
@@ -66,10 +79,19 @@ const SellPage = () => {
       <h2 style={styles.title}>Sell Your Product</h2>
       <form onSubmit={handleSubmit} style={styles.form}>
       <div style={styles.formGroup}>
-          <label style={styles.label}>Name:</label>
+          <label style={styles.label}>Product Name:</label>
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
+            style={styles.input}
+            required
+          />
+        </div>
+        <div style={styles.formGroup}>
+          <label style={styles.label}>Location:</label>
+          <input
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
             style={styles.input}
             required
           />
@@ -97,7 +119,25 @@ const SellPage = () => {
 
         <div style={styles.formGroup}>
           <label style={styles.label}>Upload Image:</label>
-          <input type="file" onChange={handleImageUpload} style={styles.fileInput}  />
+          <Input  type='file'
+                hidden
+                ref={imageRef}
+                onChange={handleImageChange}  />
+                 <BsFillImageFill
+                style={{marginLeft:'5px', cursor:"pointer"}}
+                size={16}
+                onClick={()=>imageRef.current.click()}/>
+                {imgUrl &&(
+                <Flex mt={5} w={'full'} position={'relative'}>
+                    <Image src={imgUrl} alt='selected img'></Image>
+                    <CloseButton onClick={()=>{setImgUrl("")}}
+                        bg={'gray.100'}
+                        position={'absolute'}
+                        top={2}
+                        right={2}
+                        ></CloseButton>
+                </Flex>
+            )}
         </div>
 
         <button type="submit"style={styles.button}>Submit</button>

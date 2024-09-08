@@ -2,7 +2,7 @@ import React from 'react'
 import { Flex, HStack ,Box, Avatar,Text,Button,Image} from '@chakra-ui/react'
 
 
-const ProductCard = ({owner,price,name,updatedAt,description}) => {
+const ProductCard = ({owner,price,name,updatedAt,description,img,location}) => {
 
   
   return (
@@ -19,7 +19,7 @@ const ProductCard = ({owner,price,name,updatedAt,description}) => {
                <Flex flexDirection={"row"}>
                <Text>{owner}</Text>
 
-               <Text  mr={"0px"} ml={"50px"}>{name}</Text>
+               <Text  mr={"0px"} ml={"50px"}>{location}</Text>
                </Flex>
 
               </Flex>
@@ -28,6 +28,8 @@ const ProductCard = ({owner,price,name,updatedAt,description}) => {
               <Text p={"10px"}>
                 {description}
               </Text>
+           <Image src={img}></Image>
+
           
               </Flex>
 

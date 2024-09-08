@@ -1,89 +1,3 @@
-/* import React from 'react';
-import '../assets/x.css'
-import { CardFooter } from '@chakra-ui/react';
-import {useNavigate} from'react-router-dom';
-import { Box } from '@chakra-ui/react';
-const HomePage = () => {
- 
-  const navigate=useNavigate()
-  const handleLogin=()=>{
-    navigate('/auth');
-  } 
-  const handleBuy=()=>{
-    navigate('/buy');
-  }  
-  const handleTips=()=>{
-    navigate('/tips');
-  }  
-  const handleMarketPrice=()=>{
-    navigate('/marketprice');
-  } 
-  const handleWeather=()=>{
-    navigate('/weather');
-  }  
-  return (
-     
-    <div className='homepage'>
-      
-      <header>
-        <h1>AgriSmart</h1>
-      </header>
-
-      <nav>
-        <ul>
-          <li><a href="" onClick={handleWeather}>Weather</a></li>
-          <li><a href="" onClick={handleMarketPrice}>Market Prices</a></li>
-          <li><a  onClick={handleTips}href="">Farming Tips</a></li>
-          <li><a onClick={handleBuy} href="">Buy/Sell</a></li>
-          <li onClick={handleLogin}><a href="">LOGIN</a></li>
-        </ul>
-      </nav>
-
-      <section id="weather">
-        <h2 >Weather Information</h2>
-        <div id="weather-info"></div>
-      </section>
-
-      <section id="prices">
-        <h2>Market Prices</h2>
-        <div id="price-list">
-          <ul></ul>
-        </div>
-      </section>
-
-      <section id="tips">
-        <h2>Farming Tips</h2>
-        <div id="tips-list"></div>
-      </section>
-
-      <section id="sell"  style={{
-    color: 'black',
-    ':hover': {
-      color: 'blue'
-    }
-  }}>
-      <h2 
-  onClick={handleBuy} 
- 
->
-Buy/Sell Products</h2>
-        <form>
-          <input type="text" placeholder="Product Name" required />
-          <input type="number" placeholder="Price" required />
-          <textarea placeholder="Description"></textarea>
-          <button type="submit">Submit</button>
-        </form>
-      </section>
-
-      <footer>
-        <p>&copy; 2024 AgriSmart</p>
-      </footer>
-    </div>
-  );
-};
-
-export default HomePage;
- */
 
 
 
@@ -93,12 +7,18 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaCloudSun, FaChartLine, FaLeaf, FaExchangeAlt, FaSignInAlt } from 'react-icons/fa';
 import Typewriter from 'react-typewriter-effect';
+import { Button ,Box,Text,Heading} from '@chakra-ui/react';
 
 const iconStyle = {
     fontSize: '3rem',
     color: '#fff',
     margin: '1rem',
     transition: 'transform 0.3s ease',
+    _hover: {
+        bg: "blue.400",  // Background color on hover
+        color: "white"   // Text color on hover
+      }
+    
 };
 const iconStyle2= {
   fontSize: '3rem',
@@ -232,23 +152,83 @@ const HomePage = () => {
                     </li>
                 </ul>
             </nav>
+            <Box
+  id="weather"
+  width="1460px"
+  height="100px"
+  ml="30px"
+  mt="20px"
+  bg="white"
+  _hover={{ bg: "blue.400", color: "white" }}
+  borderRadius="12px"
+  display="flex"
+  alignItems="center" 
+  justifyContent="start" 
+  onClick={handleBuy}
+  
+>
+  <Text ml="20px" fontWeight="bold" fontSize="xx-large">
+    Buy / Sell Products
+  </Text>
+</Box>
+           
 
-            <section id="weather">
-                <h2>Weather Information</h2>
-                <div id="weather-info"></div>
-            </section>
-
-            <section id="prices">
-                <h2>Market Prices</h2>
-                <div id="price-list">
-                    <ul></ul>
-                </div>
-            </section>
-
-            <section id="tips">
-                <h2>Farming Tips</h2>
-                <div id="tips-list"></div>
-            </section>
+          
+            <Box
+  id="weather"
+  width="1460px"
+  height="100px"
+  ml="30px"
+  mt="20px"
+  bg="white"
+  _hover={{ bg: "orange.400", color: "white" }}
+  borderRadius="12px"
+  display="flex"
+  alignItems="center" 
+  justifyContent="start"
+  onClick={handleMarketPrice}
+>
+  <Text ml="20px" fontWeight="bold" fontSize="xx-large">
+    Market Prices
+  </Text>
+</Box>
+<Box
+  id="weather"
+  width="1460px"
+  height="100px"
+  ml="30px"
+  mt="20px"
+  bg="white"
+  _hover={{ bg: "blue.400", color: "white" }}
+  borderRadius="12px"
+  display="flex"
+  alignItems="center" 
+  justifyContent="start" 
+  onClick={handleWeather} 
+>
+  <Text ml="20px" fontWeight="bold" fontSize="xx-large">
+    Weather
+  </Text>
+</Box>
+          
+<Box
+  id="weather"
+  width="1460px"
+  height="100px"
+  ml="30px"
+  mt="20px"
+  bg="white"
+  _hover={{ bg: "green.300", color: "white" }}
+  borderRadius="12px"
+  display="flex"
+  alignItems="center"
+  justifyContent="start" 
+  onClick={handleTips} 
+>
+  <Text ml="20px" fontWeight="bold" fontSize="xx-large">
+    Farming Tips
+  </Text>
+</Box>
 
             <footer>
                 <p>&copy; 2024 AgriSmart</p>

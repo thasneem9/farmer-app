@@ -4,7 +4,7 @@ import Product from "../models/Product.js";
 import bcrypt from 'bcrypt';
 import generateTokenAndSetCookie from "../helpers/generateTokensAndCookies.js";
 import jwt from "jsonwebtoken";
-
+import {v2 as cloudinary} from "cloudinary"
 
 
 const uploadProduct=async(req,res)=>{
@@ -13,6 +13,9 @@ const uploadProduct=async(req,res)=>{
     const description=dataReceived.description
     const owner=dataReceived.owner
     const price=dataReceived.price
+    const location=dataReceived.location
+    let img=dataReceived.image;
+    console.log("IMAG+++++++",img)
     try {
         const token = req.cookies.jwt;
         console.log("postttttttt token",token)
@@ -27,12 +30,19 @@ const uploadProduct=async(req,res)=>{
         console.log("Decoded User ID:", userId);
 
         console.log("title,contnet:",name,description)
+        if(img){
+            const uploadedResponse=await cloudinary.uploader.upload(img);
+            img=uploadedResponse.secure_url;
+        }
         const newPost= await Product.create({
             Name:name,
            description:description,
             postedBy:userId,
             price:price,
             owner:owner,
+            img:img,
+            location:location
+        
 
 
         })

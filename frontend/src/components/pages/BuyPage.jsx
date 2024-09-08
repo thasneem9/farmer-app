@@ -54,6 +54,7 @@ getFeed()
        description={post.description} 
        img={post.img} 
        postedBy={post.postedBy} 
+       location={post.location} 
        updatedAt={post.updatedAt}
        />
        ))
