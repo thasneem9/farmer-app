@@ -12,13 +12,13 @@ const Product = sequelize.define('Product', {
 
     }, 
     price:{
-      type:DataTypes.STRING,
+      type:DataTypes.INTEGER,
       allowNull:false
 
     },
     postedBy: {
         type: Sequelize.INTEGER, 
-        allowNull: false,
+        allowNull: true,
     },
     img: {
         type: Sequelize.STRING,
@@ -32,6 +32,11 @@ const Product = sequelize.define('Product', {
     location:{
         type: Sequelize.STRING,
         allowNull: true,
+    },
+    owner:{
+        type: Sequelize.STRING,
+        allowNull: true,
+
     }
 
   }, {
@@ -42,5 +47,5 @@ const Product = sequelize.define('Product', {
   
   
   
-  export default Post;
+  export default Product;
   

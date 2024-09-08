@@ -54,7 +54,7 @@ const data= await res.json()
     localStorage.setItem("user-farmer",JSON.stringify(data))
     toast({
       title: 'Login Succesful created.',
-      description: "We've created your account for you.",
+      description: "Welecome back to AgriSmart",
       status: 'success',
       duration: 9000,
       isClosable: true,

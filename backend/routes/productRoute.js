@@ -1,12 +1,14 @@
 import express from 'express'
+import { getProducts, uploadProduct } from '../controller/productController.js';
 
 
 
 const router=express.Router();
 
-router.get("/getFeed")
-router.get("/getMyPosts")
-router.post("/createPost")
+
+router.get("/getProducts",getProducts)
+
+router.post("/uploadProduct",uploadProduct)
 
 
 export default router;

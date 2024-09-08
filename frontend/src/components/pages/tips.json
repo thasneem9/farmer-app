@@ -1,0 +1,136 @@
+{
+    "states": [
+      {
+        "name": "Punjab",
+        "tips": [
+          "Use high-quality seeds to increase crop yield.",
+          "Adopt drip irrigation for water conservation.",
+          "Monitor soil health regularly."
+        ]
+      },
+      {
+        "name": "Andhra Pradesh",
+        "tips": [
+          "Use high-quality seeds to increase crop yield.",
+          "Adopt drip irrigation for water conservation.",
+          "Monitor soil health regularly.",
+          "Use crop rotation to improve soil fertility.",
+          "Irrigate crops at the right time.",
+          "Use organic fertilizers.",
+          "Control pests and diseases.",
+          "Use proper harvesting techniques.",
+          "Store produce properly.",
+          "Use technology for precision farming.",
+          "Diversify crops for better income.",
+          "Conserve water.",
+          "Use solar-powered pumps.",
+          "Maintain farm equipment.",
+          "Keep records of farm activities.",
+          "Attend training programs.",
+          "Join farmer organizations.",
+          "Use crop insurance.",
+          "Plant drought-tolerant crops.",
+          "Use mulching.",
+          "Use cover crops.",
+          "Integrate livestock farming."
+        ]
+      },
+  
+      {
+        "name": "Maharashtra",
+        "tips": [
+          "Use organic fertilizers to maintain soil fertility.",
+          "Rotate crops to prevent soil depletion.",
+          "Consider using drought-resistant crops in dry areas."
+        ]
+      },
+      {
+        "name": "Kerala",
+        "tips": [
+          "Practice sustainable farming with natural fertilizers.",
+          "Use rainwater harvesting techniques during monsoon.",
+          "Utilize mulching to retain soil moisture."
+        ]
+      },
+      {
+        "name": "Arunachal Pradesh",
+        "tips": [
+          "Use terracing to reduce soil erosion.",
+          "Plant crops suitable for high altitude.",
+          "Use organic matter to improve soil health.",
+          "Conserve water.",
+          "Use poly houses for protected cultivation.",
+          "Monitor weather patterns.",
+          "Use disease-resistant crop varieties.",
+          "Maintain soil pH levels.",
+          "Use integrated pest management.",
+          "Keep farm equipment in good condition.",
+          "Attend training programs.",
+          "Join farmer organizations.",
+          "Use crop insurance.",
+          "Plant crops suitable for high altitude.",
+          "Use mulching.",
+          "Use cover crops.",
+          "Integrate livestock farming.",
+          "Use value addition techniques.",
+          "Use solar-powered pumps.",
+          "Maintain farm records.",
+          "Diversify crops for better income."
+        ]
+      },
+      {
+        "name": "Assam",
+        "tips": [
+          "Use flood-tolerant crops.",
+          "Maintain soil pH levels.",
+          "Use integrated pest management.",
+          "Conserve water.",
+          "Use crop rotation.",
+          "Monitor soil health regularly.",
+          "Use organic fertilizers.",
+          "Control pests and diseases.",
+          "Use proper harvesting techniques.",
+          "Store produce properly.",
+          "Use technology for precision farming.",
+          "Diversify crops for better income.",
+          "Use solar-powered pumps.",
+          "Maintain farm equipment.",
+          "Keep records of farm activities.",
+          "Attend training programs.",
+          "Join farmer organizations.",
+          "Use crop insurance.",
+          "Plant drought-tolerant crops.",
+          "Use mulching.",
+          "Use cover crops."
+        ]
+      },
+      {
+        "name": "Chhattisgarh",
+        "tips": [
+          "Use integrated pest management.",
+          "Conserve water.",
+          "Use crop rotation.",
+          "Monitor soil health regularly.",
+          "Use organic fertilizers.",
+          "Control pests and diseases.",
+          "Use proper harvesting techniques.",
+          "Store produce properly.",
+          "Use technology for precision farming.",
+          "Diversify crops for better income.",
+          "Use solar-powered pumps.",
+          "Maintain farm equipment.",
+          "Keep records of farm activities.",
+          "Attend training programs.",
+          "Join farmer organizations.",
+          "Use crop insurance.",
+          "Plant drought-tolerant crops.",
+          "Use mulching.",
+          "Use cover crops."
+        ]
+      }
+  
+  
+  
+    ]
+  }
+  

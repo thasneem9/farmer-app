@@ -1,17 +1,24 @@
 import React from 'react';
 import '../assets/x.css'
 import { CardFooter } from '@chakra-ui/react';
-
+import {useNavigate} from'react-router-dom';
+import { Box } from '@chakra-ui/react';
 const HomePage = () => {
-  const indianStates = [
-    "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh",
-    "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", 
-    "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", 
-    "West Bengal", "Delhi", "Jammu and Kashmir", "Puducherry"
-  ];
+ 
+  const navigate=useNavigate()
+  const handleLogin=()=>{
+    navigate('/auth');
+  } 
+  const handleBuy=()=>{
+    navigate('/buy');
+  }  
+  const handleTips=()=>{
+    navigate('/tips');
+  }  
   return (
-    
-    <div>
+     
+    <div className='homepage'>
+      
       <header>
         <h1>AgriSmart</h1>
       </header>
@@ -20,14 +27,14 @@ const HomePage = () => {
         <ul>
           <li><a href="#weather">Weather</a></li>
           <li><a href="#prices">Market Prices</a></li>
-          <li><a href="#tips">Farming Tips</a></li>
-          <li><a href="#sell">Buy/Sell</a></li>
-          <li><a href="">LOGIN</a></li>
+          <li><a  onClick={handleTips}href="">Farming Tips</a></li>
+          <li><a onClick={handleBuy} href="">Buy/Sell</a></li>
+          <li onClick={handleLogin}><a href="">LOGIN</a></li>
         </ul>
       </nav>
 
       <section id="weather">
-        <h2>Weather Information</h2>
+        <h2 >Weather Information</h2>
         <div id="weather-info"></div>
       </section>
 
@@ -43,8 +50,17 @@ const HomePage = () => {
         <div id="tips-list"></div>
       </section>
 
-      <section id="sell">
-        <h2>Buy/Sell Products</h2>
+      <section id="sell"  style={{
+    color: 'black',
+    ':hover': {
+      color: 'blue'
+    }
+  }}>
+      <h2 
+  onClick={handleBuy} 
+ 
+>
+Buy/Sell Products</h2>
         <form>
           <input type="text" placeholder="Product Name" required />
           <input type="number" placeholder="Price" required />

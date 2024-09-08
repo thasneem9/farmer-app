@@ -12,8 +12,8 @@ const theme = extendTheme({
   styles: {
     global: {
       // Global styles
-      body: {
-        backgroundColor: "#FFFF00",  // Example: Set background color
+      '.homepage': {
+        backgroundColor: "#FFFF00",  // Set background color for the homepage section
         fontFamily: "Arial",
         margin: 0,
         padding: 0,
