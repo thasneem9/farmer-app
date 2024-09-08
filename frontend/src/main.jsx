@@ -11,9 +11,9 @@ import { RecoilRoot } from 'recoil'
 const theme = extendTheme({
   styles: {
     global: {
-      // Global styles
+     
       '.homepage': {
-        backgroundColor: "#FFFF00",  // Set background color for the homepage section
+        backgroundColor: "#FFFF00",  
         fontFamily: "Arial",
         margin: 0,
         padding: 0,
