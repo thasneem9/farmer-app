@@ -8,6 +8,8 @@ import './assets/x.css'
 import BuyPage from './components/pages/BuyPage.jsx'
 import SellPage from './components/pages/SellPage.jsx'
 import TipsPage from './components/pages/TipsPage.jsx'
+import MarketPrice from './components/pages/MarketPrice.jsx'
+import WeatherPage from './components/pages/WeatherPage.jsx'
 function App() {
   
   const { isAuthenticated } = useAuth();
@@ -21,6 +23,8 @@ function App() {
     <Route path='/buy' element={<BuyPage/>}/>
     <Route path='/sell' element={<SellPage/>}/>
     <Route path='/tips' element={<TipsPage/>}/>
+    <Route path='/marketPrice' element={<MarketPrice/>}/>
+    <Route path='/weather' element={<WeatherPage/>}/>
     </Routes>
 
      

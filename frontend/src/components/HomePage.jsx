@@ -15,6 +15,12 @@ const HomePage = () => {
   const handleTips=()=>{
     navigate('/tips');
   }  
+  const handleMarketPrice=()=>{
+    navigate('/marketprice');
+  } 
+  const handleWeather=()=>{
+    navigate('/weather');
+  }  
   return (
      
     <div className='homepage'>
@@ -25,8 +31,8 @@ const HomePage = () => {
 
       <nav>
         <ul>
-          <li><a href="#weather">Weather</a></li>
-          <li><a href="#prices">Market Prices</a></li>
+          <li><a href="" onClick={handleWeather}>Weather</a></li>
+          <li><a href="" onClick={handleMarketPrice}>Market Prices</a></li>
           <li><a  onClick={handleTips}href="">Farming Tips</a></li>
           <li><a onClick={handleBuy} href="">Buy/Sell</a></li>
           <li onClick={handleLogin}><a href="">LOGIN</a></li>
