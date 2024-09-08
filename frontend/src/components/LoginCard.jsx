@@ -21,6 +21,7 @@ import authScreenAtom from './atoms/authScreenAtom.js'
 import { useAuth } from './context/AuthContext.jsx'
 import { useRecoilValue } from 'recoil'
 import userAtom from './atoms/userAtom.js'
+import { useToast } from '@chakra-ui/react'
 
 export default function LoginCard() {
 
@@ -29,6 +30,7 @@ export default function LoginCard() {
   const userInfo={username,password}
   const [authScreen,setAuthScreen]=useRecoilState(authScreenAtom)
   const { setIsAuthenticated } = useAuth();
+  const toast = useToast()
 
   const user = useRecoilValue(userAtom);
 
@@ -50,13 +52,26 @@ const data= await res.json()
        // Persist authentication status in localStorage
        localStorage.setItem('isAuthenticated', 'true');
     localStorage.setItem("user-farmer",JSON.stringify(data))
-
+    toast({
+      title: 'Login Succesful created.',
+      description: "We've created your account for you.",
+      status: 'success',
+      duration: 9000,
+      isClosable: true,
+    })
 
   
 
   
   }else{
     console.log("Sorry incorect credentials",data)
+    toast({
+      title: 'Login Fail.',
+      description: "Sorry incorect credentials",
+      status: 'error',
+      duration: 9000,
+      isClosable: true,
+    })
    
     
   }

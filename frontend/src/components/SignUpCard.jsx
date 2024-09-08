@@ -22,15 +22,18 @@ import { useRecoilState } from 'recoil'
 import { useAuth } from './context/AuthContext.jsx'
 import { useRecoilValue } from 'recoil'
 import userAtom from './atoms/userAtom.js'
+import { useToast } from '@chakra-ui/react'
 
 export default function SignupCard() {
   const [showPassword, setShowPassword] = useState(false)
  const [username,setUsername]=useState('')
  const [name,setName]=useState('')
+ const [state,setState]=useState('')
  const [email,setEmail]=useState('')
  const [password,setPassword]=useState('')
+ const toast = useToast()
 
-  const userInfo={username,password,email,name}
+  const userInfo={username,password,email,name,state}
   const [authScreen,setAuthScreen]=useRecoilState(authScreenAtom)
   const { setIsAuthenticated } = useAuth();
   
@@ -55,17 +58,29 @@ export default function SignupCard() {
       const data= await res.json()
 console.log("data recived:",data)
 setIsAuthenticated(true);
+if(data){
+  toast({
+    title: 'Account creation Succesful.',
+    description: "We've created your account for you.",
+    status: 'success',
+    duration: 9000,
+    isClosable: true,
+  })
+}
 //this is for posts,to get author, we need it:
 localStorage.setItem("user-farmer",JSON.stringify(data))
 
 console.log("++++",user)
 console.log("++++",user.data.name)
 
+if (!res.ok) {
+  throw new Error(`Signup failed: ${res.status} ${res.statusText}`);
+}
 
       
     } catch (error) {
       console.log("error in signup client",error)
-      
+     
     }
 
     
@@ -104,6 +119,12 @@ console.log("++++",user.data.name)
                 <FormControl id="firstName" isRequired>
                   <FormLabel>name</FormLabel>
                   <Input type="text" onChange={(e)=>setName(e.target.value)} required value={name}/>
+                </FormControl>
+              </Box>
+              <Box>
+                <FormControl id="firstName" isRequired>
+                  <FormLabel>State</FormLabel>
+                  <Input type="text" onChange={(e)=>setState(e.target.value)} required value={state}/>
                 </FormControl>
               </Box>
              
