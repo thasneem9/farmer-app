@@ -8,6 +8,32 @@
     { "id": 7, "name": "Nellore" },
     { "id": 8, "name": "Kadapa" },
     { "id": 9, "name": "Chittoor" },
-    { "id": 10, "name": "Anantapur" }
-  ]
+    { "id": 10, "name": "Anantapur" },
+    { "id": 11, "name": "Itanagar" },
+    { "id": 12, "name": "Dispur" },
+    { "id": 13, "name": "Patna" },
+    { "id": 14, "name": "Raipur" },
+    { "id": 15, "name": "Panaji" },
+    { "id": 16, "name": "Gandhinagar" },
+    { "id": 17, "name": "Chandigarh" },
+    { "id": 18, "name": "Shimla" },
+    { "id": 19, "name": "Ranchi" },
+    { "id": 20, "name": "Bangalore" },
+    { "id": 21, "name": "Thiruvananthapuram" },
+    { "id": 22, "name": "Bhopal" },
+    { "id": 23, "name": "Mumbai" },
+    { "id": 24, "name": "Imphal" },
+    { "id": 25, "name": "Shillong" },
+    { "id": 26, "name": "Aizawl" },
+    { "id": 27, "name": "Kohima" },
+    { "id": 28, "name": "Bhubaneswar" },
+    { "id": 29, "name": "Jaipur" },
+    { "id": 30, "name": "Gangtok" },
+    { "id": 31, "name": "Chennai" },
+    { "id": 32, "name": "Hyderabad" },
+    { "id": 33, "name": "Dehradun" },
+    { "id": 34, "name": "Lucknow" },
+    { "id": 35, "name": "Kolkata" }
+    ]
+        
   
