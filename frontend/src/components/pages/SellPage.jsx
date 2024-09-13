@@ -99,7 +99,7 @@ const SellPage = () => {
         <div style={styles.formGroup}>
           <label style={styles.label}>Price:</label>
           <input
-            type="number"
+        
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             style={styles.input}

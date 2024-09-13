@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { FaLightbulb } from 'react-icons/fa'; 
 import tipsData from './tips.json';
+import { Flex,Container, HStack ,Box,Heading,Button,Text,Link} from '@chakra-ui/react'
+import { Link as RouterLink } from 'react-router-dom';
 
 const FarmingTips = () => {
   const [selectedState, setSelectedState] = useState('Andhra Pradesh'); 
@@ -28,6 +30,35 @@ const FarmingTips = () => {
   };
 
   return (
+    <>    <Flex
+    as="nav"
+    bg="blue.600"
+    color="white"
+    p="10px"
+    justifyContent="space-between"
+    alignItems="center"
+    boxShadow="md"
+  >
+    <HStack spacing="20px">
+      <Link as={RouterLink} to="/" _hover={{ textDecoration: 'none' }}>
+        <Text fontSize="xl" fontWeight="bold">Home</Text>
+      </Link>
+      <Link as={RouterLink} to="/about" _hover={{ textDecoration: 'none' }}>
+        <Text fontSize="xl" fontWeight="bold">About</Text>
+      </Link>
+      <Link as={RouterLink} to="/contact" _hover={{ textDecoration: 'none' }}>
+        <Text fontSize="xl" fontWeight="bold">Contact</Text>
+      </Link>
+    </HStack>
+    <Button
+      as={RouterLink}
+      to="/sell"
+      colorScheme="teal"
+      variant="solid"
+    >
+      Upload Product
+    </Button>
+  </Flex>
     <div className="container">
       <h2>Farming Tips for {selectedState}</h2>
       <div className="tip-box">
@@ -112,6 +143,7 @@ const FarmingTips = () => {
         }
       `}</style>
     </div>
+    </>
   );
 };
 

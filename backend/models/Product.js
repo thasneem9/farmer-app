@@ -12,7 +12,7 @@ const Product = sequelize.define('Product', {
 
     }, 
     price:{
-      type:DataTypes.INTEGER,
+      type:DataTypes.STRING,
       allowNull:false
 
     },

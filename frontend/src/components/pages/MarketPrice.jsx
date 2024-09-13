@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
+import { Flex,Container, HStack ,Box,Heading,Button,Text,Link} from '@chakra-ui/react'
+import { Link as RouterLink } from 'react-router-dom';
 const RESOURCE_ID = '35985678-0d79-46b4-9ed6-6f13308a1d24';
 const API_KEY = '579b464db66ec23bdd000001f9c0853db9f54c335867b0b1f042b166';
 
@@ -55,6 +56,35 @@ const MarketPrices = () => {
   }, [stateCode, district, commodity]);
 
   return (
+    <>    <Flex
+    as="nav"
+    bg="blue.600"
+    color="white"
+    p="10px"
+    justifyContent="space-between"
+    alignItems="center"
+    boxShadow="md"
+  >
+    <HStack spacing="20px">
+      <Link as={RouterLink} to="/" _hover={{ textDecoration: 'none' }}>
+        <Text fontSize="xl" fontWeight="bold">Home</Text>
+      </Link>
+      <Link as={RouterLink} to="/about" _hover={{ textDecoration: 'none' }}>
+        <Text fontSize="xl" fontWeight="bold">About</Text>
+      </Link>
+      <Link as={RouterLink} to="/contact" _hover={{ textDecoration: 'none' }}>
+        <Text fontSize="xl" fontWeight="bold">Contact</Text>
+      </Link>
+    </HStack>
+    <Button
+      as={RouterLink}
+      to="/sell"
+      colorScheme="teal"
+      variant="solid"
+    >
+      Upload Product
+    </Button>
+  </Flex>
     <div className="commodity-prices">
       <h1>Commodity Prices</h1>
       <div className="filters">
@@ -138,6 +168,7 @@ const MarketPrices = () => {
         }
       `}</style>
     </div>
+    </>
   );
 };
 

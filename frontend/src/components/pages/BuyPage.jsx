@@ -1,13 +1,14 @@
 import React from 'react'
-import { Flex,Container, HStack ,Box,Heading,Button,Text} from '@chakra-ui/react'
+import { Flex,Container, HStack ,Box,Heading,Button,Text,Link} from '@chakra-ui/react'
 import ProductCard from '../ProductCard'
 import {useNavigate} from'react-router-dom';
 import { useState,useEffect } from 'react'
-
+import { Link as RouterLink } from 'react-router-dom';
 
 const BuyPage = () => {
   const navigate=useNavigate()
   const [posts,setPosts]=useState([])
+
 const handleUpload=()=>{
 navigate('/sell')
 
@@ -36,39 +37,86 @@ getFeed()
 
  
 
-  return (
-    <Flex flexBasis="960px" m="30px" bg=""   flexDirection={"column"} width={"870px"} alignItems={"center"}  justifyContent={"center"}  marginLeft={"300px"}>
-          <Text  height="50px" fontWeight={"bold"} fontSize={'xx-large'}>Buy Products Directly!</Text>
-     
-       
-       
-     <Flex   wrap={"wrap"}  alignItems={"center"}  justifyContent={"center"} >
-   
-     {posts?.length>0?(
-      posts.map((post)=>(
-      <ProductCard 
-      key={post.id}
-      owner={post.owner}
-      name={post.Name}
-      price={post.price}
-       description={post.description} 
-       img={post.img} 
-       postedBy={post.postedBy} 
-       location={post.location} 
-       updatedAt={post.updatedAt}
-       />
-       ))
-       ):(
-       <p>No posts awvilble</p>
-       )}
-     </Flex>
-       
-   
-        <Button onClick={handleUpload} width={"200px"} bg={"green.100"}>Upload Product</Button>
-        
-    </Flex>
-  
-  )
-}
 
-export default BuyPage
+return (
+  <Box>
+    {/* Navbar */}
+    <Flex
+      as="nav"
+      bg="blue.600"
+      color="white"
+      p="10px"
+      justifyContent="space-between"
+      alignItems="center"
+      boxShadow="md"
+    >
+      <HStack spacing="20px">
+        <Link as={RouterLink} to="/" _hover={{ textDecoration: 'none' }}>
+          <Text fontSize="xl" fontWeight="bold">Home</Text>
+        </Link>
+        <Link as={RouterLink} to="/about" _hover={{ textDecoration: 'none' }}>
+          <Text fontSize="xl" fontWeight="bold">About</Text>
+        </Link>
+        <Link as={RouterLink} to="/contact" _hover={{ textDecoration: 'none' }}>
+          <Text fontSize="xl" fontWeight="bold">Contact</Text>
+        </Link>
+      </HStack>
+      <Button
+        as={RouterLink}
+        to="/sell"
+        colorScheme="teal"
+        variant="solid"
+      >
+        Upload Product
+      </Button>
+    </Flex>
+
+    {/* Main Content */}
+    <Box bg="gray.50" p="20px">
+      <Flex
+        flexDirection="column"
+        maxWidth="1200px"
+        margin="auto"
+        alignItems="center"
+      >
+        <Button
+          mb="20px"
+          p="20px 40px"
+          fontWeight="bold"
+          fontSize="2xl"
+          colorScheme="yellow"
+        >
+          Farm Products Nearby
+        </Button>
+
+        <Flex
+          wrap="wrap"
+          spacing="20px"
+          justifyContent="center"
+          width="100%"
+        >
+          {posts?.length > 0 ? (
+            posts.map((post) => (
+              <ProductCard
+                key={post.id}
+                owner={post.owner}
+                name={post.Name}
+                price={post.price}
+                description={post.description}
+                img={post.img}
+                postedBy={post.postedBy}
+                location={post.location}
+                updatedAt={post.updatedAt}
+              />
+            ))
+          ) : (
+            <Text>No posts available</Text>
+          )}
+        </Flex>
+      </Flex>
+    </Box>
+  </Box>
+);
+};
+
+export default BuyPage;
